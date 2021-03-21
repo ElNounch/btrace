@@ -372,8 +372,8 @@ public class BTraceFunctionalTests extends RuntimeTest {
         "btrace/extensions/SimpleExtensionTest.java",
         10,
         (stdout, stderr, retcode, jfrFile) -> {
-          assertFalse("Script should not have failed", stdout.contains("FAILED"));
-          assertTrue("Non-empty stderr", stderr.isEmpty());
+          assertFalse(stdout.contains("FAILED"), "Script should not have failed");
+          assertTrue(stderr.isEmpty(), "Non-empty stderr");
           assertTrue(stdout.contains("[this, noargs]"));
           assertTrue(stdout.contains("[this, args]"));
           assertTrue(stdout.contains("{xxx}"));
